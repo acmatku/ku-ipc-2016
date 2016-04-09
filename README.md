@@ -1,1 +1,1 @@
-# ku-acm-competition-2016
+# ku-ipc-2016
