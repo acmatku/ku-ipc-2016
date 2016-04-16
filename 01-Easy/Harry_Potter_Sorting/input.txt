@@ -1,9 +1,9 @@
 8
-G Harry Potter
-S Draco Malfoy
 G Hermione Granger
-H Newton Scamander
+G Harry Potter
 S Severus Snape
+S Draco Malfoy
+H Newton Scamander
+R Myrtle Warren
 S Tom Riddle
 R Luna Lovegood
-R Myrtle Warren
