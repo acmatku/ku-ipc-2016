@@ -41,7 +41,7 @@ def findKey(pattern, progression, firstNoteNum):
 			print "Matched chords ", progression[2]+1,progression[3]+1," to ",pattern[0],pattern[1]
 			return a
 
-		if b[progression[3]] == pattern[0] and b[progression[0]] == pattern[1]:
+		if b[progression[3]] == pattern[0] and b[progression[0]] == pattern[1]:
 			print "Matched chords ", progression[3]+1,progression[0]+1," to ",pattern[0],pattern[1]
 			return a
 	return "NULL"
@@ -76,7 +76,9 @@ if newKey == "NULL":
 result = ""
 
 #Part III - return the progression in the new key
-for i in range(0, len(keys[newKey])):
-	print keys[newKey][i]
-	result = result + keys[newKey][i] + " "
+result = result + keys[newKey][prog[0]] + " "
+result = result + keys[newKey][prog[1]] + " "
+result = result + keys[newKey][prog[2]] + " "
+result = result + keys[newKey][prog[3]]
+
 print result
