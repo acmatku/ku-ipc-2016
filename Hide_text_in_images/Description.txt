@@ -1,0 +1,12 @@
+(M)
+
+Hide text in images using RGB values (steganography)
+
+You are given a list of RGB values seperated by spaces. Hidden in the list is a string of values
+whose last digits are a message encoded in binary. Find the message, convert it to ASCII, and display it.
+
+Example input:
+250 113 074 190 011 129 130 014 148 070 191 170 100 050 230 160 121 240 031 140 160 200 120 051 081 060 091 140 230 241 201 070 171
+
+Example output:
+ACM
