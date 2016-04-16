@@ -9,6 +9,10 @@ Jazz and blues musicians don't like to be fenced in, and often switch keys on a 
 
 Your task is to take in a key, a chord progression, and the last three chords played, and output the root notes  of the progression in the new key.  The first chord represents the last chord played of the current key, and the second and third are the next two steps of the progression, but in the new key.
 
+You will only be given the Major keys A-G.
+The progressions will include only I,II,III,IV,and V chords.
+For Python-friendly programming, all sharps will be represented as flats (F# becomes Gb)
+
 Example Input:
 C
 I IV V IV
