@@ -2,7 +2,7 @@
 ACM@KU Intramural Programming Competition 2016
 
 Author: Stefan Mendoza
-Problem: Harry Potter Sorting
+Problem: Easy - Harry Potter Sorting
 '''
 
 import sys
