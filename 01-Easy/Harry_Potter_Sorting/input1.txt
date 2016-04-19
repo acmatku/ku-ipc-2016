@@ -1,0 +1,7 @@
+6
+G Harry Potter
+S Draco Malfoy
+G Hermione Granger
+H Newton Scamander
+S Tom Riddle
+R Luna Lovegood

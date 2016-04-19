@@ -1,0 +1,10 @@
+Gryffindor:
+Harry Potter
+Hermione Granger
+Hufflepuff:
+Newton Scamander
+Ravenclaw:
+Luna Lovegood
+Slytherin:
+Draco Malfoy
+Tom Riddle
