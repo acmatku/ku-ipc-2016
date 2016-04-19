@@ -28,6 +28,3 @@ for word in file_text:
     print(pIndices)
     print(cIndices)
     print("\n")
-
-# How do you deal with this?
-# P A C L I I A P A C

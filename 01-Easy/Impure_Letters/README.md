@@ -7,6 +7,7 @@ target letters.
 
 Example input:
 ```
+5
 RIPCORD
 DREAM
 IMPERFECT
