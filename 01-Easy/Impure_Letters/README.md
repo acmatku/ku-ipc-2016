@@ -7,12 +7,13 @@ target letters.
 
 Example input:
 ```
-5
+6
 RIPCORD
 DREAM
 IMPERFECT
 SCEPTIC
 IMPACT
+SUPERCALIFRAGILISTICEXPIALIDOCIUOS
 ```
 
 Example Output:
@@ -22,4 +23,5 @@ INVALID
 5
 INVALID
 2
+19
 ```

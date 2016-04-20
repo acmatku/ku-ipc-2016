@@ -17,14 +17,11 @@ Output:
 Gryffindor:
 Harry Potter
 Hermione Granger
-
 Hufflepuff:
 Newton Scamander
-
 Ravenclaw:
 Luna Lovegood
 Myrtle Warren
-
 Slytherin:
 Draco Malfoy
 Severus Snape
