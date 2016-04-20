@@ -32,7 +32,7 @@ for(int i = 0; i < 7; i++) {
   myFile << thresholds[i];
 }
 
-myFile.close9);
+myFile.close();
 };
 
 #endif
