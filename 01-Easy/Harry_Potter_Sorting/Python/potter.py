@@ -8,14 +8,12 @@ Problem: Easy - Harry Potter Sorting
 import sys
 
 # Open the file & read it, removing any whitespace at the end of the file
-f = open(sys.argv[1])
-file_text = f.read().strip().split('\n')
+file_text = [line.strip() for line in sys.stdin.readlines()]
 
 '''
 -   Grab the number of students from the first line in the file
 -   Make a tuple list of the form [ ( 'G', ['Harry Potter'] ) , ...]
 '''
-numberOfNames = file_text[0]
 splitByHouseAndName = [(line.split(' ', 1)[0], line.split(' ', 1)[1:]) for line in file_text[1:]]
 
 '''
@@ -49,6 +47,3 @@ for i in range(0, len(sorted_houses)):
 
     for member in sorted_houses[i][1]:
         print member
-
-    if i != len(sorted_houses) - 1:
-        print("")
