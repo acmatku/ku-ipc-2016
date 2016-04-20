@@ -18,7 +18,7 @@ Sample input:
 Sample output:
 ```
 ###########
-#X###GXXXX#
+#X###XXXXX#
 #X### ###X#
 #X   R   X#
 #X### ###X#
