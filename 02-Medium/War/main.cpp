@@ -1,7 +1,6 @@
 #ifndef MAIN_CPP
 #define MAIN_CPP
 
-#include <vector>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -21,6 +20,11 @@ int convert(char card) {
 //
 void war(std::queue<int> &player1, std::queue<int> &player2, std::queue<int> &warStack) {
   int size;
+  std::queue<int> temp;
+  temp.push(player1.front());
+  temp.push(player2.front());
+  player1.pop();
+  player2.pop();
   //Checks if each player's hand is smaller than 4, which would prevent 3 cards being moved to the back of the deck
   //If this has been called on multiple wars, increases the needed hand size by 3 each time
   if(player1.size() < 4) {
@@ -41,14 +45,20 @@ void war(std::queue<int> &player1, std::queue<int> &player2, std::queue<int> &wa
     //Put the next 3 cards to the back of each player's deck, then delete the unneeded values.
     for(int i = 0; i < 3;i++) {
       warStack.push(player1.front());
-      warStack.push(player2.front());
       player1.pop();
+    }
+    for(int i = 0; i < 3;i++) {
+      warStack.push(player2.front());
       player2.pop();
+    }
+    for(int i = 0; i < 2; i++) {
+      warStack.push(temp.front());
+      temp.pop();
     }
     //If player 1 wins, put the winning cards on the bottom of their deck and delete the unneeded cards.
     if(player1.front() > player2.front()) {
-      warStack.push(player1.front());
-      warStack.push(player2.front());
+      player1.push(player1.front());
+      player1.push(player2.front());
       player1.pop();
       player2.pop();
       size = warStack.size();
@@ -56,11 +66,12 @@ void war(std::queue<int> &player1, std::queue<int> &player2, std::queue<int> &wa
         player1.push(warStack.front());
         warStack.pop();
       }
+
       return;
 
     } else if(player1.front() < player2.front()) {
-      warStack.push(player2.front());
-      warStack.push(player1.front());
+      player2.push(player2.front());
+      player2.push(player1.front());
       player1.pop();
       player2.pop();
       size = warStack.size();
@@ -68,14 +79,10 @@ void war(std::queue<int> &player1, std::queue<int> &player2, std::queue<int> &wa
         player2.push(warStack.front());
         warStack.pop();
       }
+
       return;
     }
     else {
-      warStack.push(player1.front());
-      warStack.push(player2.front());
-
-      player1.pop();
-      player2.pop();
       war(player1,player2,warStack);
     }
 }
@@ -89,7 +96,6 @@ std::string test;
 std::queue<int> player1;
 std::queue<int> player2;
 std::queue<int> warStack;
-char c;
 
 //Put the input into the needed vectors
 
@@ -105,10 +111,9 @@ while(std::getline(iss2,test,' ')) {
   player2.push(convert(test[0]));
 }
 
-//std::cout << deck1 << "\n" << deck2;
 //Run the game until one player has no cards
-while(!player1.empty() || !player2.empty()) {
-std::cout << player1.size() << player2.size() << "\n";
+while(!player1.empty() && !player2.empty()) {
+//std::cout << player1.size() << player2.size() << "\n";
   //If player 1 wins, put both cards at the back of their deck and then delete each player's first cards
   if(player1.front() > player2.front()) {
     player1.push(player1.front());
@@ -123,20 +128,12 @@ std::cout << player1.size() << player2.size() << "\n";
     player2.pop();
   //If there is a tie, do a war
   } else {
-    warStack.push(player1.front());
-    warStack.push(player2.front());
-
-    player1.pop();
-    player2.pop();
     war(player1,player2,warStack);
   }
   if(player1.empty()) {
-    std::cout << "Player 1 wins";
-    break;
-  }
-  else if(player2.empty()){
-    std::cout << "Player 2 wins";
-    break;
+    std::cout << "PLAYER 1";
+  } else if(player2.empty()){
+    std::cout << "PLAYER 2";
   }
 
 }
