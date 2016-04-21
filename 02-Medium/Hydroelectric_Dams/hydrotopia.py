@@ -2,12 +2,13 @@
 ACM@KU Intramural Programming Competition 2016
 
 Author: Stefan Mendoza
-Problem: Easy - Hydroelectric Dams
+Problem: Medium - Hydroelectric Dams
 '''
 
 import sys
 
 # Open the file & read it, removing any whitespace at the end of the file
+dims = sys.stdin.readline() # ignoring first line
 file_text = [line.strip() for line in sys.stdin.readlines()]
 longest_line = max([len(line) for line in file_text])
 blanks = []
