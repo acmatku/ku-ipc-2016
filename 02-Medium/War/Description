@@ -5,8 +5,8 @@ The game is over when a player loses all their cards.  A modified version of War
 Your task is to determine whether each player would win or lose based on a threshold;  If a war occurs and a player's card is below their threshold, the player will opt to flip an extra card.  Otherwise, the player will not. This choice hould be made at every war. You will be given two lists of strings representing the face value of each player's cards, followed by two more lists representing the threshold each player will use for the game.  You should return a series of integers separated by spaces, where 1 means the first player wins or 2 means the second player wins.
 
 Example input:
-K A 3 6 2 9 J 3 Q 7 3 5 8 K 6 7 4 Q 10 9 9 8 A 2 5 10
-K 3 4 6 2 9 Q J K Q 4 5 7 8 7 4 5 J J A 10 10 2 A 6 8
+K A 3 6 2 9 J 3 Q 7 3 5 8 K 6 7 4 Q T 9 9 8 A 2 5 T
+K 3 4 6 2 9 Q J K Q 4 5 7 8 7 4 5 J J A T T 2 A 6 8
 
 Example output: (made up, placeholder)
 PLAYER 2
