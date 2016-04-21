@@ -1,13 +1,12 @@
 #Stephen Longofono
-#4-21-2016
-#Prime Stacks Solution
+#Prime Stacks, Solution
+#April 21, 2016
 
-
+#Expects 5 space-delineated lines of intgers
 #first and second line are the original stacks given as input, bottom to top
 #third, fourth, and fifth are the solution stacks, bottom to top
-#final line should be the number of moves
 #This solves the optimal solution, which should be the first one they could
-#arrive at using a depth first search because science
+#arrive at using a breadth first search because science
 
 import sys
 import traceback
@@ -137,7 +136,6 @@ nums2 = sys.stdin.readline().strip('\n').split(' ')
 stack0 = sys.stdin.readline().strip('\n').split(' ')
 stack1 = sys.stdin.readline().strip('\n').split(' ')
 stack2 = sys.stdin.readline().strip('\n').split(' ')
-moves = sys.stdin.readline().strip('\n')
 
 
 teststack0 = nums
@@ -153,9 +151,6 @@ print stack0
 print stack1
 print stack2
 
-print "Read in moves: "
-print moves
-
 try:
 	for i in range (0,2):
 		a = stack0[i]
@@ -165,7 +160,7 @@ try:
 			print "Not a prime number: ", (str(a) + str(b) + str(c))
 			sys.exit(-1)
 
-	print "Done"
+	print "Done"
 	#verify that the solution given is the ideal
 	#get ideal solution
 	ideal, count = solveIt(teststack0, teststack1, teststack2)
@@ -180,8 +175,8 @@ try:
 
 	if (teststack0==stack0) and (teststack1==stack1) and (teststack2==stack2):
 		print "Given solution is correct!"
-		if(int(moves) > count):
-			print "Not an ideal solution, you had more moves than necessary..."
+		#if(int(moves) > count):
+		#	print "Not an ideal solution, you had more moves than necessary..."
 	else:
 		print "Given solution is incorrect, you made invalid moves!"
 	sys.exit(0)
