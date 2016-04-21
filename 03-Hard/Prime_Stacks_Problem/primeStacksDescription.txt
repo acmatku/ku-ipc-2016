@@ -1,4 +1,4 @@
-Your discrete math professor loves the towers of Hanoi problem SO much.  She also loves prime numbers for her own inscrutable reasons.  She has decided to combine them into a new problem, in lieu of your final exam.  You are given three stacks of length 5, with 5 integers in the first, 4 in the second, and 0 in the third.  Your task is to rearrange the integers such that the digits at each level of the three stacks make a 3-digit prime number.  Naturally, you will need to prove that your algorithm is ideal, by also returning the number of valid moves it took to solve the puzzle.  Her example is as follows:
+Your discrete math professor loves the towers of Hanoi problem SO much.  She also loves prime numbers for her own inscrutable reasons.  She has decided to combine them into a new problem, in lieu of your final exam.  You are given three stacks of length 5, with 5 integers in the first, 4 in the second, and 0 in the third.  Your task is to rearrange the integers such that the digits at each level of the three stacks make a 3-digit prime number.  Naturally, you will need to come to an ideal solution, which your instructor has already determined.  Her example is as follows:
 
              Before:          After:
 Row 4   |4|  | |  | |      | |  | |  | |
@@ -9,17 +9,18 @@ Row 0   |1|  |6|  | |      |1|  |6|  |3|
 
 Stack    0    1    2        0    1    2
 
-You can expect an input of two lines from stdin, the first being the 5 integers for the first stack, and the second line being the remaining integers in the second stack.  The first number you read from each line is the digit at the bottom of the stack.  You may only make valid stack moves, that is, you may only move the top integer on the stack, and you may not exceed the capacity of any stack (all stacks hold 5 integers).  
+You can expect an input of two lines from stdin, the first being the 5 integers in the first stack, and the second line being the remaining integers in the second stack.  The first number you read from each line is the digit at the bottom of the stack.  You may only make valid stack moves, that is, you may only move the top integer on the stack, and you may not exceed the capacity of any stack (all stacks hold 5 integers).  
 
-Your return value should include the original stacks you started with,
+Your return value should include the original stacks you started with, as you read them in, followed by the contents of your
+stacks in the same manner.
 
 For the the example above, the input you would get from the command line would be:
 
-1,1,1,9,4
-3,9,3,6
+1 1 1 9 4
+3 9 3 6
 
-And the output you would create would be:
+For which the output you would create would be:
 
-1,1,1
-6,3,4
-3,9,9
+1 4 6
+3 9 3
+9 1 1
