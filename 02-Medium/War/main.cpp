@@ -120,6 +120,7 @@ while(!player1.empty() && !player2.empty()) {
     player1.push(player2.front());
     player1.pop();
     player2.pop();
+
   //If player 2 wins, put both cards at the back of their deck and then delete each player's first cards
   } else if(player1.front() < player2.front()) {
     player2.push(player2.front());
