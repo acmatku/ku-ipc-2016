@@ -15,7 +15,7 @@
   [p1-deck p2-deck war-stack]
   (cond (< (count p1-deck) 4) ['() (concat p2-deck p1-deck war-stack)]
         (< (count p2-deck) 4) [(concat p1-deck p2-deck war-stack) '()]
-        :else (let [war-stack' (concat war-stack (take 3 p1-deck) (take 3 p2-deck))
+        :else (let [war-stack' (concat (take 3 p1-deck) (take 3 p2-deck) war-stack)
                     p1-deck' (nthrest p1-deck 3)
                     p2-deck' (nthrest p2-deck 3)
                     p1-card (first p1-deck')
@@ -40,8 +40,8 @@
                                         (concat (rest p2-d) (list p2-card p1-card))])
             :else (recur (war (rest p1-d) (rest p2-d) (list p1-card p2-card)))))
         (if (seq p1-d)
-          "PLAYER 1"
-          "PLAYER 2")))))
+          ["PLAYER 1" p1-d]
+          ["PLAYER 2" p2-d])))))
 
 (defn main
   []
