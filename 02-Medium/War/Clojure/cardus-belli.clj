@@ -40,8 +40,8 @@
                                         (concat (rest p2-d) (list p2-card p1-card))])
             :else (recur (war (rest p1-d) (rest p2-d) (list p1-card p2-card)))))
         (if (seq p1-d)
-          ["PLAYER 1" p1-d]
-          ["PLAYER 2" p2-d])))))
+          "PLAYER 1"
+          "PLAYER 2")))))
 
 (defn main
   []
