@@ -12,7 +12,6 @@
 
 (defn war
   [p1-deck p2-deck war-stack]
-  (println (clojure.string/join " " ["war" (count p1-deck) (count p2-deck) (count war-stack)]))
   (cond (< (count p1-deck) 4) ['() (concat p2-deck p1-deck war-stack)]
         (< (count p2-deck) 4) [(concat p1-deck p2-deck war-stack) '()]
         :else (let [war-stack' (concat war-stack (take 3 p1-deck) (take 3 p2-deck))
@@ -29,7 +28,6 @@
 (defn game
   [p1-deck p2-deck]
   (loop [state [p1-deck p2-deck]]
-    (println (clojure.string/join " " ["battle" (count (first state)) (count (second state))]))
     (let [[p1-d p2-d] state]
       (if (and (seq p1-d) (seq p2-d))
         (let [p1-card (first p1-d)
@@ -41,8 +39,8 @@
                                         (concat (rest p2-d) (list p2-card p1-card))])
             :else (recur (war (rest p1-d) (rest p2-d) (list p1-card p2-card)))))
         (if (seq p1-d)
-          ["PLAYER 1" (count p1-d) p1-d]
-          ["PLAYER 2" (count p2-d) p2-d])))))
+          "PLAYER 1"
+          "PLAYER 2")))))
 
 (defn main
   []
@@ -50,4 +48,4 @@
         p2-cards (str->cards (read-line))]
     (println (game p1-cards p2-cards))))
 
-(time (main))
+(main)
