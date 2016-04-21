@@ -38,9 +38,12 @@
                                  (= seeking \A))
                              (= (get-in maze right) \R)) [(assoc-in maze [x y] \X) right \E])))))
 
-(defn dfs
+(defn bfs
   [orig-maze pos]
   (loop [states (list [orig-maze pos \A])] ; initially seeking \A anything
+    (doseq [row (first (first states))]
+      (println (apply str row)))
+    (println)
     (when-let [[maze [x y] seeking :as state] (first states)]
       (if (= (get-in maze [x y]) \G)
         (assoc-in maze [x y] \X)
@@ -54,7 +57,7 @@
         _     (first input) ; we don't need to record dimensions of the maze
         pos   (map #(Integer/parseInt %) (clojure.string/split (apply str (second input)) #" "))
         maze  (into [] (for [line (drop 2 input)] (into [] (seq line))))]
-    (if-let [solution (dfs maze pos)]
+    (if-let [solution (bfs maze pos)]
       (doseq [row solution]
         (println (apply str row)))
       (println "NO SOLUTION"))))
