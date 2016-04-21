@@ -14,6 +14,7 @@ std::random_shuffle(&cards[0], &cards[51]);
 
 for(int i = 0; i < 52; i++) {
   std::cout << cards[i];
+  std::cout << " ";
   if(i==25) {
     std::cout << "\n";
   }
