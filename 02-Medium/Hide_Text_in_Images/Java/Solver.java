@@ -1,5 +1,3 @@
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 import java.io.*;
 public class Solver {
@@ -8,15 +6,13 @@ public class Solver {
 
 	public static void main(String[] args) throws IOException {
 
-		Path filePath = Paths.get("input1.txt");
-		Scanner reader = new Scanner(filePath);
+		Scanner reader = new Scanner(System.in);
 		String message = "";
 		String translate = "";
 		States state;
 		state = States.W;
 
 		while(reader.hasNext()) {
-			test++;
 			if(reader.hasNextInt()) {
 				String value = String.valueOf(reader.nextInt());
 				value = value.substring(value.length()-1);
