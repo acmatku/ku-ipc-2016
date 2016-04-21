@@ -4,21 +4,24 @@
 #include <algorithm>
 #include <vector>
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 
 int main() {
+    std::srand(std::time(0));
 
 
-char cards[52] = {'1','1','1','1','2','2','2','2','3','3','3','3','4','4','4','4','5','5','5','5','6','6','6','6','7','7','7','7','8','8','8','8','9','9','9','9','T','T','T','T','J','J','J','J','Q','Q','Q','Q','K','K','K','K'};
+    char cards[52] = {'1','1','1','1','2','2','2','2','3','3','3','3','4','4','4','4','5','5','5','5','6','6','6','6','7','7','7','7','8','8','8','8','9','9','9','9','T','T','T','T','J','J','J','J','Q','Q','Q','Q','K','K','K','K'};
 
-std::random_shuffle(&cards[0], &cards[51]);
+    std::random_shuffle(&cards[0], &cards[51]);
 
-for(int i = 0; i < 52; i++) {
-  std::cout << cards[i];
-  std::cout << " ";
-  if(i==25) {
-    std::cout << "\n";
-  }
-}
+    for(int i = 0; i < 52; i++) {
+        std::cout << cards[i];
+        std::cout << " ";
+        if(i==25) {
+            std::cout << "\n";
+        }
+    }
 
 };
 
