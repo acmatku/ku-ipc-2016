@@ -1,0 +1,30 @@
+Complex3x
+Description:
+Clear, might want to avoid the use of dictionary to avoid giving it away.
+
+Solution:
+For the rest of my days, all IO routines shall be named slurp
+
+
+Harry Potter
+Description:
+Change alphabetically to alphabetically by first or by last name.
+
+Impure:
+Description:
+The final example is a little ambiguous.  You could get different counts
+depending on which I you selected.  For example, if for some strange reason you decided to use ICEXPIALIDOC, it also satisfies the goal condition, but
+with a return of 9.
+
+
+Hydroelectric
+Description:
+Update to reflect counting the units of water pumped once the water has settled.  Counting the pumped water requires solving it and keeping track anyways.
+
+Glitter Paths
+Description:
+Need to define the behavior for puzzles with no solution.
+
+Stegonography
+Description:
+Consider revising "whose last digits are a message encoded in binary." to " some of whose digita are a message encoded in binary."  To clarify that 3 should not be converted to 00000011.
