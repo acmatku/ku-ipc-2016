@@ -41,9 +41,6 @@
 (defn bfs
   [orig-maze pos]
   (loop [states (list [orig-maze pos \A])] ; initially seeking \A anything
-    (doseq [row (first (first states))]
-      (println (apply str row)))
-    (println)
     (when-let [[maze [x y] seeking :as state] (first states)]
       (if (= (get-in maze [x y]) \G)
         (assoc-in maze [x y] \X)
