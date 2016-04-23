@@ -1,7 +1,7 @@
 '''
 ACM@KU Intramural Programming Competition 2016
 
-Author: Stefan Mendoza & Stephen Longofono
+Author: Stefan Mendoza
 Problem: Medium - Hydroelectric Dams
 '''
 
@@ -25,7 +25,7 @@ class Water():
             return False
 
     """
-    ???
+    Moves a block of water right through a generator
     """
     def pump(self, graph):
         newBlanks = graph['blanks']
@@ -49,7 +49,7 @@ class Water():
         return ((self.row + 1, self.column) in blanks)
 
     """
-    ???
+    Moves a block of water down
     """
     def settle(self, graph):
         newBlanks = graph['blanks']
@@ -67,7 +67,8 @@ class Water():
 
 
 """
-???
+Generates a dictionary where the keys are the types of characters in the dam
+and the values are lists of (row, column) tuples where that characters appears
 """
 def generateOpenGraph(graph, rows, columns):
     blanks = []
@@ -152,7 +153,8 @@ if __name__ == '__main__':
 
     totalMoves = 0
 
-    while True:
+    while(True in [water.canBePumped(graph) for water in waters]
+          or True in [water.needsToSettle(graph) for water in waters]):
         moves = 0
         for i in range(0, len(waters)):
             while waters[i].canBePumped(graph):
@@ -164,7 +166,5 @@ if __name__ == '__main__':
                 graph = waters[i].settle(graph)
                 printGraph(graph, waters)
         totalMoves += moves
-        if moves == 0:
-            break
 
     print(totalMoves)
