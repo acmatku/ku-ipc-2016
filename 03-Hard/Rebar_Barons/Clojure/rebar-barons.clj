@@ -17,4 +17,4 @@
         x-of-is (map first (sort-by second (map vector left right)))] ; index of left's ally
     (println (longest x-of-is))))
 
-(time (main))
+(main)
