@@ -1,8 +1,8 @@
-X X X X X  
-X X X X X  
-X G G X X  
+X X X X X
+X X X X X
+X G G X X
 XWX G G G X
-XXXXXXXXX X
-X X      W 
-X X      W 
-XXX      W 
+XXXXXXXXXWX
+        XWX
+        XWX
+        XXX

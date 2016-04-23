@@ -100,40 +100,6 @@ def generateOpenGraph(graph, rows, columns):
     return openGraph
 
 
-"""
-Used for testing purposes
-"""
-def printGraph(graph, waters):
-    printed = []
-
-    for i in range(0, graph['rows']):
-        row = []
-        for j in range(0, graph['columns']):
-            row.append(' ')
-        printed.append(row)
-
-    gens = graph['generators']
-    walls = graph['walls']
-    water = graph['waters']
-
-    for i in range(0, len(gens)):
-        x = gens[i][0]
-        y = gens[i][1]
-        printed[x][y] = 'G'
-
-    for i in range(0, len(walls)):
-        x = walls[i][0]
-        y = walls[i][1]
-        printed[x][y] = 'X'
-
-    for i in range(0, len(waters)):
-        x = waters[i].row
-        y = waters[i].column
-        printed[x][y] = 'W'
-
-    return printed
-
-
 if __name__ == '__main__':
     dam = [line.strip() for line in sys.stdin.readlines()]
     rows = int(dam[0].split(' ')[0])
