@@ -24,3 +24,12 @@ For which the output you would create would be:
 1 4 6
 3 9 3
 9 1 1
+
+           Before:             After:
+Row 4   | |  | |  | |      | |  | |  | |
+Row 3   | |  | |  | |      | |  | |  | |
+Row 2   |7|  |3|  | |      | |  | |  | |
+Row 1   |4|  |6|  | |      |4|  |6|  |3|
+Row 0   |9|  |4|  | |      |9|  |4|  |7|
+
+Stack    0    1    2        0    1    2
