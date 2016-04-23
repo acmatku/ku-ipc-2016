@@ -4,19 +4,15 @@
 #include <iostream>
 #include <bitset>
 #include <string>
-#include <fstream>
+
 
 int main() {
 
-  std::ifstream myfile;
   std::string message,value,translate;
   enum States{W,Z,O,I};
   States state = W;
 
-  myfile.open("input1.txt");
-
-  while(!myfile.eof()) {
-    std::getline(myfile,value,' ');
+  while(std::getline(std::cin,value,' ')) {
      value = value.substr(2,1);
 
     switch(state) {
