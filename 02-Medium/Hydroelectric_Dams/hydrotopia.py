@@ -9,77 +9,74 @@ import sys
 
 class Water():
     def __init__(self, x, y):
-        self.isActive = True
         self.row = x
         self.column = y
-        self.isSettled = True
-
 
     """
     Determines whether water can move right through a generator
     """
     def canBePumped(self, graph):
         if (self.column > 0 and
-                self.column < graph['length'] - 3 and
-                ((self.row, self.column + 1) in graph['generators'])):
+            self.column < graph['columns'] - 3 and
+            ((self.row, self.column + 1) in graph['generators']) and
+            ((self.row, self.column + 2) in graph['blanks'])):
                 return True
         else:
-            self.isActive = False
             return False
 
-
     """
+    ???
     """
     def pump(self, graph):
-        for key in graph:
-            print(key, graph.get(key))
-        print("\n")
-
         newBlanks = graph['blanks']
         newBlanks.remove((self.row , self.column + 2))
+        newBlanks.append((self.row, self.column))
         graph['blanks'] = newBlanks
 
         newWater = graph['waters']
         newWater.remove((self.row, self.column))
         newWater.append((self.row, self.column + 2))
         graph['waters'] = newWater
-        return graph
 
+        self.column = self.column + 2
+        return graph
 
     """
     Determines whether water needs to move down to settle
     """
     def needsToSettle(self, graph):
-        blocked = graph['generators'] + graph['walls'] + graph['waters']
-        return ((self.row + 1, self.column) not in blocked)
-
+        blanks = graph['blanks']
+        return ((self.row + 1, self.column) in blanks)
 
     """
+    ???
     """
     def settle(self, graph):
         newBlanks = graph['blanks']
         newBlanks.remove((self.row + 1, self.column))
+        newBlanks.append((self.row, self.column))
         graph['blanks'] = newBlanks
 
         newWater = graph['waters']
         newWater.remove((self.row, self.column))
-        new.append((self.row + 1, self.column))
+        newWater.append((self.row + 1, self.column))
         graph['waters'] = newWater
+
+        self.row = self.row + 1
         return graph
 
 
 """
+???
 """
-def generateOpenGraph(graph):
-    longest_line = max([len(line) for line in graph])
-
+def generateOpenGraph(graph, rows, columns):
     blanks = []
     generators = []
     walls = []
     waters = []
 
-    for i in range(0, len(graph)):
-        for j in range(0, len(graph[i])):
+    for i in range(0, rows):
+        for j in range(0, columns):
             if graph[i][j] == 'G':
                 generators.append((i,j))
             elif graph[i][j] == 'W':
@@ -89,12 +86,12 @@ def generateOpenGraph(graph):
             else:
                 blanks.append((i,j))
 
-        for j in range(len(graph[i]), longest_line):
+        for j in range(len(graph[i]), columns):
             blanks.append((i,j))
 
     openGraph = {}
-    openGraph['length'] = longest_line
-    openGraph['height'] = len(graph)
+    openGraph['rows'] = rows
+    openGraph['columns'] = columns
     openGraph['blanks'] = blanks
     openGraph['generators'] = generators
     openGraph['walls'] = walls
@@ -102,39 +99,72 @@ def generateOpenGraph(graph):
     return openGraph
 
 
+"""
+Used for testing purposes
+"""
+def printGraph(graph, waters):
+    printed = []
+
+    for i in range(0, graph['rows']):
+        row = []
+        for j in range(0, graph['columns']):
+            row.append(' ')
+        printed.append(row)
+
+    gens = graph['generators']
+    walls = graph['walls']
+    water = graph['waters']
+
+    for i in range(0, len(gens)):
+        x = gens[i][0]
+        y = gens[i][1]
+        printed[x][y] = 'G'
+
+    for i in range(0, len(walls)):
+        x = walls[i][0]
+        y = walls[i][1]
+        printed[x][y] = 'X'
+
+    for i in range(0, len(waters)):
+        x = waters[i].row
+        y = waters[i].column
+        printed[x][y] = 'W'
+
+    return printed
+
+
 if __name__ == '__main__':
     dam = [line.strip() for line in sys.stdin.readlines()]
+    rows = int(dam[0].split(' ')[0])
+    columns = int(dam[0].split(' ')[1])
     dam = dam[1:]
+
+    for i in range(0, len(dam)):
+        while len(dam[i]) < columns:
+            dam[i] += ' '
 
     waters = []
 
-    for i in range(0, len(dam)):
-        for j in range(0, len(dam[i])):
-            if dam[i][j] == 'W':
-                waters.append(Water(i,j))
+    graph = generateOpenGraph(dam, rows, columns)
 
-    graph = generateOpenGraph(dam)
+    for water in graph['waters']:
+        waters.append(Water(water[0], water[1]))
+
     totalMoves = 0
 
-    while True in [water.isActive for water in waters]:
+    while True:
         moves = 0
         for i in range(0, len(waters)):
-            while waters[i].canBePumped:
+            while waters[i].canBePumped(graph):
                 graph = waters[i].pump(graph)
+                printGraph(graph, waters)
                 moves += 1
-                while waters[i].needsToSettle:
-                    graph = waters[i].settle(graph)
 
+            while waters[i].needsToSettle(graph):
+                graph = waters[i].settle(graph)
+                printGraph(graph, waters)
         totalMoves += moves
         if moves == 0:
             break
 
     print(totalMoves)
-    # print(graph['generators'])
-    # print("length =", graph['length'])
-    #
-    # for i in range(0, len(waters)):
-    #     print((waters[i].row, waters[i].column))
-    #     print("Can be pumped:", waters[i].canBePumped(graph))
-    #     print("Needs to settle:", waters[i].needsToSettle(graph))
-    #     print("\n")

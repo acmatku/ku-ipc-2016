@@ -1,0 +1,9 @@
+8 11
+XWX X X X
+XWX X X X
+XWG G X X
+XWX G G G X
+XXXXXXXXX X
+        X X
+        X X
+        XXX
