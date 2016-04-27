@@ -25,15 +25,30 @@ This repo contains the problem docket for the 2016 ACM@KU Intramural Programming
 2. Jeff Kraus (Senior)
 3. Adam Albee (Freshman) - [@AdarkTheCoder](https://github.com/AdarkTheCoder)
 
-### Best In Class:
-- Freshman: TBA
-- Sophomore: TBA
-- Junior: TBA
+### Best In Class (Freshman):
+1.
+2.
+3.
+
+### Best In Class (Sophomore):
+1. Ben Haney - 
+2. Alex Todd (Kansas State University) - 
+3. Mark Erickson - 
+
+### Best In Class (Junior):
+1. Philip Wood
+2. Jay Offerdahl - [@JayOfferdahl](https://github.com/JayOfferdahl)
+3. Hung Nguyen - [@hungtn95](https://github.com/hungtn95)
+
+### Best In Class (Senior):
+1. Jeff Kraus
+2. Yujie Deng
+3. Robert Winslow
 
 ### Best Solution in a Dynamic Language:
-1. TBA
-2. TBA
+1. Tyler Wade (Graduate)
+2. Yujie Deng (Senior)
 
 ### Best Solution in a Statically-Typed Language:
-1. TBA
-2. TBA
+1. Jason Gevargizian (Graduate)
+2. Alvin Cheung (Junior)
