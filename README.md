@@ -47,7 +47,7 @@ This repo contains the problem docket for the 2016 ACM@KU Intramural Programming
 
 ### Best Solution in a Dynamic Language:
 1. Tyler Wade (Graduate)
-2. Yujie Deng (Senior)
+2. Yujie Deng (Senior) - [@xxxsqzhu](https://github.com/xxxsqzhu)
 
 ### Best Solution in a Statically-Typed Language:
 1. Jason Gevargizian (Graduate)
