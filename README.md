@@ -32,7 +32,7 @@ This repo contains the problem docket for the 2016 ACM@KU Intramural Programming
 
 ### Best In Class (Sophomore):
 1. Ben Haney - 
-2. Alex Todd (Kansas State University) - 
+2. Alex Todd (Kansas State University) - [@atodd94](https://github.com/atodd94)
 3. Mark Erickson - 
 
 ### Best In Class (Junior):
