@@ -26,9 +26,9 @@ This repo contains the problem docket for the 2016 ACM@KU Intramural Programming
 3. Adam Albee (Freshman) - [@AdarkTheCoder](https://github.com/AdarkTheCoder)
 
 ### Best In Class (Freshman):
-1.
-2.
-3.
+1. TBA
+2. TBA
+3. TBA
 
 ### Best In Class (Sophomore):
 1. Ben Haney - 
